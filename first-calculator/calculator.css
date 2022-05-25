@@ -1,72 +1,61 @@
 #calcBody{
     border: 3px solid black;
-    height: 30vh;
-    width: 20vh;
+    border-radius: 2%;
+    height: 100%;
+    width: 60%;
 }
 #calcScreen{
     display: flex;
-    border: 3px solid red;
     height: 20%;
     width: 100%;
     font-size: 50px;
     justify-content: end;
+    border: 1px solid grey;
+    border-radius: 2%;
 }
-#calcBtns{
+.top-row{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
 }
-#btn0{
-    font-size: 40px;
+#btnReset, #btnDel{
+    font-size: 30px;
+    width: 100%;
 }
-#btn1{
-    font-size: 40px;
+.third-row{
+    display: flex;
+    width: 100%;
+    height: 20%;
 }
-#btn2{
-    font-size: 40px;
+#btn7, #btn8, #btn9, #btnDiv {
+    font-size: 30px;
+    width: 50%;
 }
-#btn3{
-    font-size: 40px;
+.second-row{
+    display: flex;
+    width: 100%;
+    height: 20%;
 }
-#btn4{
-    font-size: 40px;
+#btn4, #btn5, #btn6, #btnMulti {
+    font-size: 30px;
+    width: 50%;
 }
-#btn5{
-    font-size: 40px;
+.first-row{
+    display: flex;
+    width: 100%;
+    height: 20%;
 }
-#btn6{
-    font-size: 40px;
+#btn1, #btn2, #btn3, #btnSub {
+    font-size: 30px;
+    width: 50%;
 }
-#btn7{
-    font-size: 40px;
+.bottom-row{
+    display: flex;
+    width: 100%;
+    height: 20%;
 }
-#btn8{
-    font-size: 40px;
-}
-#btn9{
-    font-size: 40px;
-}
-#btnDeci{
-    font-size: 40px;
-}
-#btnAdd{
-    font-size: 40px;
-}
-#btnSub{
-    font-size: 40px;
-}
-#btnMulti{
-    font-size: 40px;
-}
-#btnEqual{
-    font-size: 40px;
-}
-#btnDiv{
-    font-size: 40px;
-}
-#btnDel{
-    font-size: 40px;
-}
-#btnReset{
-    font-size: 40px;
+#btn0, #btnDeci, #btnEqual, #btnAdd{
+    font-size: 30px;
+    width: 50%;
 }
