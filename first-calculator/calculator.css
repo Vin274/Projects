@@ -13,49 +13,15 @@
     border: 1px solid grey;
     border-radius: 2%;
 }
-.top-row{
+.top-row, .third-row, .second-row, .first-row, .bottom-row{
     display: flex;
     width: 100%;
     height: 20%;
     justify-content: center;
 }
-#btnReset, #btnDel{
+#btnReset, #btnDel, #btn7, #btn8, #btn9, #btnDiv, #btn4, #btn5, #btn6, #btnMulti,
+#btn1, #btn2, #btn3, #btnSub, #btn0, #btnDeci, #btnEqual, #btnAdd{
     font-size: 30px;
     width: 100%;
 }
-.third-row{
-    display: flex;
-    width: 100%;
-    height: 20%;
-}
-#btn7, #btn8, #btn9, #btnDiv {
-    font-size: 30px;
-    width: 50%;
-}
-.second-row{
-    display: flex;
-    width: 100%;
-    height: 20%;
-}
-#btn4, #btn5, #btn6, #btnMulti {
-    font-size: 30px;
-    width: 50%;
-}
-.first-row{
-    display: flex;
-    width: 100%;
-    height: 20%;
-}
-#btn1, #btn2, #btn3, #btnSub {
-    font-size: 30px;
-    width: 50%;
-}
-.bottom-row{
-    display: flex;
-    width: 100%;
-    height: 20%;
-}
-#btn0, #btnDeci, #btnEqual, #btnAdd{
-    font-size: 30px;
-    width: 50%;
-}
+
