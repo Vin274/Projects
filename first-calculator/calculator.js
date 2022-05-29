@@ -77,29 +77,34 @@ function btn9() {
     }
 }
 function btnAdd() {
+    document.getElementById('calcScreen').textContent = '+'
     document.getElementById('btnAdd');
     addValue = count;
     count = 0;
     statement = 'addition'
 }
 function btnSub() {
+    document.getElementById('calcScreen').textContent = '-'
     document.getElementById('btnSub');
     subValue = count;
     count = 0;
     statement = 'subtract'
 }
 function btnMulti() {
+    document.getElementById('calcScreen').textContent = '*'
     document.getElementById('btnMulti');
     multiValue = count;
     count = 0;
     statement = 'multiply'
 }
 function btnDiv() {
+    document.getElementById('calcScreen').textContent = '/'
     document.getElementById('btnDiv');
     divValue = count;
     count = 0;
     statement = 'divide'
 }
+//Adding the preview screen will be an issue as it will clear back to 0 0. Need to figure out a way to bypass this.
 function btnReset() {
     count = 0;
     document.getElementById('calcScreen').textContent = count;
@@ -107,6 +112,7 @@ function btnReset() {
 function btnDeci() {
     document.getElementById('calcScreen').textContent = count += '.';
 }
+//Issue with deleting. When whole calculation is deleted, the buttons move up over the screen.
 function btnDel() {
     let removeDigit = count.substring(0, count.length - 1);
     document.getElementById('calcScreen').textContent = removeDigit;
@@ -121,12 +127,28 @@ function btnEqual() {
     let finalValue = parseFloat(count);
     if (statement === 'subtract') {
         document.getElementById('calcScreen').textContent = finalSubValue - finalValue;
+        document.querySelector('#historyScreen').innerHTML = `${finalSubValue} - ${finalValue}`
     } else if (statement === 'addition') {
         document.getElementById('calcScreen').textContent = finalAddValue + finalValue;
+        document.querySelector('#historyScreen').innerHTML = `${finalAddValue} + ${finalValue}`
     } else if (statement === 'multiply') {
         document.getElementById('calcScreen').textContent = finalMultiValue * finalValue;
+        document.querySelector('#historyScreen').innerHTML = `${finalMultiValue} * ${finalValue}`
     } else if (statement === 'divide') {
         document.getElementById('calcScreen').textContent = finalDivValue / finalValue;
+        document.querySelector('#historyScreen').innerHTML = `${finalDivValue} / ${finalValue}`
     }
+    //Deleting values for buttons so when equals is pushed after the result. The screen goes back to 0.
+    addValue = 0;
+    subValue = 0;
+    multiValue = 0;
+    divValue = 0;
     count = 0;
 }
+
+
+// let equalBtn = document.querySelector('#btnEqual');
+// equalBtn.addEventListener('click', e => {
+//         return document.querySelector('#previewScreen').innerHTML = ''
+// }) 
+    
