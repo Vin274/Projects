@@ -1,10 +1,10 @@
 let statement;
 let count = 0;
-let safeCount = 0;
 let addValue = 0;
 let subValue = 0;
 let multiValue = 0;
 let divValue = 0;
+
 //Assigned all buttons so I can call them from JS instead of from HTML
 const btn0 = document.querySelector('#btn0');
 const btn1 = document.querySelector('#btn1');
@@ -27,7 +27,7 @@ const btnDel = document.querySelector('#btnDel');
 const calculatorScreen = document.querySelector('#calculatorScreen');
 const history = document.querySelector('#historyScreen');
 
-//Using physical keys. equals isn't in yet.
+//Using physical keys. Might try adding a loop since code is repetitive.
 
 window.addEventListener('keydown', (event) => {
     let digit = event.key;
@@ -106,7 +106,7 @@ window.addEventListener('keydown', (event) => {
             calculatorScreen.textContent = '+'
             addValue = count;
             count = 0;
-            statement = 'addition1'
+            statement = 'addition'
             break;
         case '-':
             calculatorScreen.textContent = '-'
@@ -139,6 +139,44 @@ window.addEventListener('keydown', (event) => {
             calculatorScreen.textContent = removeDigit;
             count = removeDigit;
             break;
+    }
+});
+
+//Could possibly merge with code above
+
+window.addEventListener('keydown', (event) => {
+    let equals = event.key;
+    if (equals !== 'Enter') {
+        return
+    } switch (statement) {
+        case 'subtract':
+            calculatorScreen.textContent = parseFloat(subValue) - parseFloat(count);
+            history.textContent = `${parseFloat(subValue)} - ${parseFloat(count)}`;
+            break;
+        case 'addition':
+            calculatorScreen.textContent = parseFloat(addValue) + parseFloat(count);
+            history.textContent = `${parseFloat(addValue)} + ${parseFloat(count)}`;
+            break;
+        case 'multiply':
+            calculatorScreen.textContent = parseFloat(multiValue) * parseFloat(count);
+            history.textContent = `${parseFloat(multiValue)} x ${parseFloat(count)}`;
+            break;
+        case 'divide':
+            calculatorScreen.textContent = parseFloat(divValue) / parseFloat(count);
+            history.textContent = `${parseFloat(divValue)} / ${parseFloat(count)}`;
+            break;
+    }
+});
+
+//Reset count value when equals key is released
+window.addEventListener('keyup', (event) => {
+    let resetCount = event.key;
+    if (resetCount === "Enter") {
+        addValue = 0;
+        subValue = 0;
+        multiValue = 0;
+        divValue = 0;
+        count = 0;
     }
 });
 
