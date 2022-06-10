@@ -166,6 +166,7 @@ window.addEventListener('keydown', (event) => {
             history.textContent = `${parseFloat(divValue)} / ${parseFloat(count)}`;
             break;
     }
+    console.log(count)
 });
 
 //Reset count value when equals key is released
@@ -178,6 +179,7 @@ window.addEventListener('keyup', (event) => {
         divValue = 0;
         count = 0;
     }
+    console.log2(count)
 });
 
 //Using the mouse
